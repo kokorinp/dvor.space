@@ -1,0 +1,223 @@
+/*
+Author: TARAN
+29.11.2021
+*/
+
+$font-color_link_hover: #BBB9D1;
+$font-color_mail_hover: #e3e3e3;
+// базовые настройки
+$base-font-family: 'Raleway';
+$base-font-style: normal;
+$base-font-weight: normal;
+$base-font-color: #FFFFFD;
+$base-font-size: 16px;
+$base-background: #000000;
+
+$base-logo-width: 40vw;
+
+
+
+
+//$base-logo-top-padding: $base-logo-width * 0.45; // 18vw;
+$base-logo-top-padding: 18vw;
+//$base-logo-top-padding: 15vw;
+
+$padding-left-links: 2vw;
+
+@mixin bubble($left, $top, $width, $color) {
+    left: $left;
+    top: $top;
+    width: $width;
+    height: $width;
+    .circle{
+        background-color: $color;
+    }
+}
+
+
+@font-face {
+    font-family: $base-font-family;
+    src: url('../fonts/Raleway-Medium.ttf') format('truetype');
+    font-weight: $base-font-weight;
+    font-style: normal;
+}
+
+
+
+
+body {
+    font-family: $base-font-family;
+    font-style: normal;
+    font-weight: $base-font-weight;
+    font-size: 16px;
+    background: $base-background;
+    color: $base-font-color;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x:hidden;
+
+}
+
+p, h1{
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: $base-logo-top-padding; // 10rem
+}
+
+.logo__wrapper{
+    width: $base-logo-width;
+}
+
+.logo__img{
+    width: 100%;
+    height: auto;
+}
+
+.circle{
+    border-radius: 100rem;
+    width: 100%;
+    height: 100%;
+}
+
+.bubble{
+    z-index: -1;
+    position: absolute;
+}
+
+.bubble1{
+    @include bubble(50 - 0.21925 * $base-logo-width, $base-logo-top-padding - 2.22vw, 0.525 * $base-logo-width, #A00885);
+    // @include bubble(41.23vw, $base-logo-top-padding - 2.22vw, 21vw, #A00885);
+}
+
+
+.bubble2{
+    @include bubble(50 + 0.33 * $base-logo-width, $base-logo-top-padding + 0.78vw, 0.1755 * $base-logo-width, #BCE2EB);
+    // @include bubble(63.2vw, $base-logo-top-padding + 0.78vw, 6.9vw, #BCE2EB);
+
+}
+
+.bubble3{
+    @include bubble(50 + 0.805 * $base-logo-width, $base-logo-top-padding + 3.78vw, 0.25 * $base-logo-width, #A0CBF3);
+    //  @include bubble(82.2vw, $base-logo-top-padding + 3.78vw, 10vw, #A0CBF3);
+}
+
+.bubble4{
+    @include bubble(50 + 0.725 * $base-logo-width, $base-logo-top-padding + 21.33vw, 0.1 * $base-logo-width, #D0E18F);
+    // @include bubble(79vw, $base-logo-top-padding + 21.33vw, 4vw, #D0E18F);
+}
+
+.bubble5{
+    @include bubble(50 + 0.505 * $base-logo-width, $base-logo-top-padding + 34.33vw, 0.125 * $base-logo-width, #75167F);
+    // @include bubble(70.2vw, $base-logo-top-padding + 34.33vw, 5vw, #75167F);
+}
+
+.bubble6{
+    @include bubble(50 - 0.275 * $base-logo-width, $base-logo-top-padding + 25.33vw, 0.0875 * $base-logo-width, #4F76BF);
+    // @include bubble(39vw, $base-logo-top-padding + 25.33vw, 3.5vw, #4F76BF);
+}
+
+.bubble7{
+    @include bubble(50 - 0.975 * $base-logo-width, $base-logo-top-padding + 16.83vw, 0.1875 *  $base-logo-width, #669EE5);
+    // @include bubble(11vw, $base-logo-top-padding + 16.83vw, 7.5vw, #669EE5);
+}
+
+.bubble8{
+    @include bubble(50 - 0.225 * $base-logo-width, $base-logo-top-padding - 6.17vw, 0.0875 * $base-logo-width, #C12525);
+    // @include bubble(41vw, $base-logo-top-padding - 6.17vw, 3.5vw, #C12525);
+}
+
+.bubble9{
+    @include bubble(50 + 0.1 * $base-logo-width, $base-logo-top-padding - 13.5vw, 0.1125 * $base-logo-width, #9FCBF2);
+    //@include bubble(54vw, $base-logo-top-padding - 13.5vw, 4.5vw, #9FCBF2);
+}
+
+
+
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 7vw;
+}
+
+.contact__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.contact__item {
+    //width: 100%;
+    //flex-grow: 1;
+}
+
+.contact__presentation_link, .contact__address_link, .contact__email{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $base-font-color;
+}
+
+.contact__presentation_link__text {
+    font-size: 2vw;
+    padding-left: $padding-left-links;
+    line-height: 1.4;
+}
+.contact__presentation_link__img{
+    width: 7.5vw;
+    height: auto;
+}
+
+.contact__address_link__img{
+    width: 2.7vw;
+    height: auto;
+}
+
+.contact__address_link {
+    text-decoration: none;
+}
+
+.contact__address_link__text{
+    font-size: 1.6vw;
+    padding-left: $padding-left-links;
+    line-height: 1.4;
+}
+
+.contact__email__img{
+    width: 5vw;
+    height: auto;
+}
+
+.contact__email__link{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-left: $padding-left-links;
+}
+
+.contact__email__link_phone, .contact__email__link_email{
+    display: block;
+    font-size: 1.6vw;
+    line-height: 1.4;
+    color: $base-font-color;
+}
+
+.contact__email__link_email{
+    padding-top: 0.5vw;
+}
+
+
+// transform: rotate(20deg);
+//@media (max-width: 1400px) {
+//}

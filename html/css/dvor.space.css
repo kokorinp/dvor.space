@@ -1,0 +1,217 @@
+/*
+Author: TARAN
+29.11.2021
+*/
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  background: #000000;
+  color: #FFFFFD;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+p, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 18vw;
+}
+
+.logo__wrapper {
+  width: 40vw;
+}
+
+.logo__img {
+  width: 100%;
+  height: auto;
+}
+
+.circle {
+  border-radius: 100rem;
+  width: 100%;
+  height: 100%;
+}
+
+.bubble {
+  z-index: -1;
+  position: absolute;
+}
+
+.bubble1 {
+  left: 41.23vw;
+  top: 15.78vw;
+  width: 21vw;
+  height: 21vw;
+}
+.bubble1 .circle {
+  background-color: #A00885;
+}
+
+.bubble2 {
+  left: 63.2vw;
+  top: 18.78vw;
+  width: 7.02vw;
+  height: 7.02vw;
+}
+.bubble2 .circle {
+  background-color: #BCE2EB;
+}
+
+.bubble3 {
+  left: 82.2vw;
+  top: 21.78vw;
+  width: 10vw;
+  height: 10vw;
+}
+.bubble3 .circle {
+  background-color: #A0CBF3;
+}
+
+.bubble4 {
+  left: 79vw;
+  top: 39.33vw;
+  width: 4vw;
+  height: 4vw;
+}
+.bubble4 .circle {
+  background-color: #D0E18F;
+}
+
+.bubble5 {
+  left: 70.2vw;
+  top: 52.33vw;
+  width: 5vw;
+  height: 5vw;
+}
+.bubble5 .circle {
+  background-color: #75167F;
+}
+
+.bubble6 {
+  left: 39vw;
+  top: 43.33vw;
+  width: 3.5vw;
+  height: 3.5vw;
+}
+.bubble6 .circle {
+  background-color: #4F76BF;
+}
+
+.bubble7 {
+  left: 11vw;
+  top: 34.83vw;
+  width: 7.5vw;
+  height: 7.5vw;
+}
+.bubble7 .circle {
+  background-color: #669EE5;
+}
+
+.bubble8 {
+  left: 41vw;
+  top: 11.83vw;
+  width: 3.5vw;
+  height: 3.5vw;
+}
+.bubble8 .circle {
+  background-color: #C12525;
+}
+
+.bubble9 {
+  left: 54vw;
+  top: 4.5vw;
+  width: 4.5vw;
+  height: 4.5vw;
+}
+.bubble9 .circle {
+  background-color: #9FCBF2;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 7vw;
+}
+
+.contact__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.contact__presentation_link, .contact__address_link, .contact__email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFD;
+}
+
+.contact__presentation_link__text {
+  font-size: 2vw;
+  padding-left: 2vw;
+  line-height: 1.4;
+}
+
+.contact__presentation_link__img {
+  width: 7.5vw;
+  height: auto;
+}
+
+.contact__address_link__img {
+  width: 2.7vw;
+  height: auto;
+}
+
+.contact__address_link {
+  text-decoration: none;
+}
+
+.contact__address_link__text {
+  font-size: 1.6vw;
+  padding-left: 2vw;
+  line-height: 1.4;
+}
+
+.contact__email__img {
+  width: 5vw;
+  height: auto;
+}
+
+.contact__email__link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-left: 2vw;
+}
+
+.contact__email__link_phone, .contact__email__link_email {
+  display: block;
+  font-size: 1.6vw;
+  line-height: 1.4;
+  color: #FFFFFD;
+}
+
+.contact__email__link_email {
+  padding-top: 0.5vw;
+}
