@@ -13,14 +13,12 @@ $base-font-color: #FFFFFD;
 $base-font-size: 16px;
 $base-background: #000000;
 
-$base-logo-width: 40vw;
+:root {
+    --base-logo-width: 25vw;
+    --base-logo-top-padding: 14vw;
+}
 
-
-
-
-//$base-logo-top-padding: $base-logo-width * 0.45; // 18vw;
-$base-logo-top-padding: 18vw;
-//$base-logo-top-padding: 15vw;
+//$base-logo-top-padding: 18vw;
 
 $padding-left-links: 2vw;
 
@@ -45,6 +43,13 @@ $padding-left-links: 2vw;
 
 
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x:hidden;
+}
 body {
     font-family: $base-font-family;
     font-style: normal;
@@ -52,11 +57,6 @@ body {
     font-size: 16px;
     background: $base-background;
     color: $base-font-color;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    overflow-x:hidden;
-
 }
 
 p, h1{
@@ -69,11 +69,12 @@ p, h1{
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-top: $base-logo-top-padding; // 10rem
+    padding-top: var(--base-logo-top-padding);
+    width: 100%;
 }
 
 .logo__wrapper{
-    width: $base-logo-width;
+    width: var(--base-logo-width);
 }
 
 .logo__img{
@@ -92,51 +93,168 @@ p, h1{
     position: absolute;
 }
 
-.bubble1{
-    @include bubble(50 - 0.21925 * $base-logo-width, $base-logo-top-padding - 2.22vw, 0.525 * $base-logo-width, #A00885);
-    // @include bubble(41.23vw, $base-logo-top-padding - 2.22vw, 21vw, #A00885);
+@keyframes bubble1-rotate {
+    from {
+        transform: rotate(0deg);
+        transform-origin: 40% 62% 0; // x y z
+    }
+    to {
+        transform: rotate(359deg);
+    }
 }
+
+.bubble1{
+    @include bubble(calc(50vw - (0.21925 * var(--base-logo-width))), calc(var(--base-logo-top-padding) - (0.0555 * var(--base-logo-width))), calc(0.525 * var(--base-logo-width)), #A00885);
+    //@include bubble(41.23vw, $base-logo-top-padding - 2.22vw, 21vw, #A00885);
+    animation-name: bubble1-rotate;
+    animation-duration: 3s;
+    animation-direction: normal;
+    animation-delay: 2s;
+    //animation-iteration-count: 10;
+    animation-iteration-count: infinite;
+    //animation-fill-mode: forwards;
+    //animation-timing-function: linear;
+    animation-timing-function: ease;
+
+}
+
 
 
 .bubble2{
-    @include bubble(50 + 0.33 * $base-logo-width, $base-logo-top-padding + 0.78vw, 0.1755 * $base-logo-width, #BCE2EB);
-    // @include bubble(63.2vw, $base-logo-top-padding + 0.78vw, 6.9vw, #BCE2EB);
-
+    @include bubble(calc(50vw + (0.33 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.0195 * var(--base-logo-width))), calc(0.1755 * var(--base-logo-width)), #BCE2EB);
+    animation-name: bubble2-rotate;
+    animation-duration: 4s;
+    animation-direction: normal;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes bubble2-rotate {
+    from {
+        transform: rotate(0deg);
+        transform-origin: 40% 50% 0; // x y z
+    }
+    50% {
+        transform: rotate(359deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 .bubble3{
-    @include bubble(50 + 0.805 * $base-logo-width, $base-logo-top-padding + 3.78vw, 0.25 * $base-logo-width, #A0CBF3);
-    //  @include bubble(82.2vw, $base-logo-top-padding + 3.78vw, 10vw, #A0CBF3);
+    @include bubble(calc(50vw + (0.805 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.0945 * var(--base-logo-width))), calc(0.25 * var(--base-logo-width)), #A0CBF3);
+    animation-name: bubble3-animation;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    //animation-delay: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes bubble3-animation {
+    from {
+    }
+    25% {
+        transform: translate(1vw,-0.6vw);
+    }
+    50% {
+        transform: translate(-1vw,0.6vw);
+    }
+    to{
+        transform: translate(1vw,-1vw);
+    }
 }
 
 .bubble4{
-    @include bubble(50 + 0.725 * $base-logo-width, $base-logo-top-padding + 21.33vw, 0.1 * $base-logo-width, #D0E18F);
-    // @include bubble(79vw, $base-logo-top-padding + 21.33vw, 4vw, #D0E18F);
+    @include bubble(calc(50vw + (0.725 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.53325 * var(--base-logo-width))), calc(0.1 * var(--base-logo-width)), #D0E18F);
+    animation-name: bubble4-animation;
+    animation-duration: 0.3s;
+    animation-direction: alternate;
+    //animation-delay: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes bubble4-animation {
+    from {
+        transform-origin: 55% 60% 0; // x y z
+    }
+    to {
+        //transform: rotate(359deg);
+        transform: translateX(-0.1vw) rotate(120deg);
+    }
 }
 
 .bubble5{
-    @include bubble(50 + 0.505 * $base-logo-width, $base-logo-top-padding + 34.33vw, 0.125 * $base-logo-width, #75167F);
+    @include bubble(calc(50vw + (0.505 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.84525 * var(--base-logo-width))), calc(0.125 * var(--base-logo-width)), #75167F);
     // @include bubble(70.2vw, $base-logo-top-padding + 34.33vw, 5vw, #75167F);
 }
 
 .bubble6{
-    @include bubble(50 - 0.275 * $base-logo-width, $base-logo-top-padding + 25.33vw, 0.0875 * $base-logo-width, #4F76BF);
-    // @include bubble(39vw, $base-logo-top-padding + 25.33vw, 3.5vw, #4F76BF);
+    @include bubble(calc(50vw - (0.275 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.63325 * var(--base-logo-width))), calc(0.0875 * var(--base-logo-width)), #4F75C0);
+    animation-name: bubble6-animation;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    //animation-delay: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+@keyframes bubble6-animation {
+    from {
+        transform-origin: 40% 60% 0; // x y z
+    }
+    to {
+        transform: translateX(0.1vw) rotate(-120deg);
+    }
 }
 
 .bubble7{
-    @include bubble(50 - 0.975 * $base-logo-width, $base-logo-top-padding + 16.83vw, 0.1875 *  $base-logo-width, #669EE5);
-    // @include bubble(11vw, $base-logo-top-padding + 16.83vw, 7.5vw, #669EE5);
+    @include bubble(calc(50vw - (1.08 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.42075 * var(--base-logo-width))), calc(0.1875 *  var(--base-logo-width)), #669EE5);
+    animation-name: bubble7-animation;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    //animation-delay: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+@keyframes bubble7-animation {
+    from {
+        transform-origin: 10% 60% 0; // x y z
+    }
+    to {
+        transform: translateY(1vw) rotate(120deg);
+    }
 }
 
 .bubble8{
-    @include bubble(50 - 0.225 * $base-logo-width, $base-logo-top-padding - 6.17vw, 0.0875 * $base-logo-width, #C12525);
-    // @include bubble(41vw, $base-logo-top-padding - 6.17vw, 3.5vw, #C12525);
+    @include bubble(calc(50vw - (0.225 * var(--base-logo-width))), calc(var(--base-logo-top-padding) - (0.15425 * var(--base-logo-width))), calc(0.0875 * var(--base-logo-width)), #C12525);
+    animation-name: bubble8-animation;
+    animation-duration: 7s;
+    //animation-direction: alternate;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transform-origin: 60% calc(0.8 * var(--base-logo-width)) 0; // x y z
+}
+@keyframes bubble8-animation {
+    to {
+        transform:  rotate(360deg); //translate(40vw, 300px)
+    }
 }
 
 .bubble9{
-    @include bubble(50 + 0.1 * $base-logo-width, $base-logo-top-padding - 13.5vw, 0.1125 * $base-logo-width, #9FCBF2);
-    //@include bubble(54vw, $base-logo-top-padding - 13.5vw, 4.5vw, #9FCBF2);
+    @include bubble(calc(50vw + (0.1 * var(--base-logo-width))), calc(var(--base-logo-top-padding) - (0.3375 * var(--base-logo-width))), calc(0.1125 * var(--base-logo-width)), #9FCBF2);
+    animation-name: bubble9-animation;
+    animation-duration: 10s;
+    //animation-direction: alternate;
+    animation-delay: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transform-origin: 60% calc(0.8 * var(--base-logo-width)) 0; // x y z
+}
+@keyframes bubble9-animation {
+    to {
+        transform:  rotate(360deg); //translate(40vw, 300px)
+    }
 }
 
 
@@ -146,14 +264,15 @@ p, h1{
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding-top: 7vw;
+    padding-top: calc(0.175 * var(--base-logo-width));
 }
 
 .contact__wrapper{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 70%;
+    // width: 70%;
+    width: calc(1.93 * var(--base-logo-width));
 }
 
 .contact__item {
@@ -169,17 +288,17 @@ p, h1{
 }
 
 .contact__presentation_link__text {
-    font-size: 2vw;
+    font-size: calc(0.05 * var(--base-logo-width)); // 5%
     padding-left: $padding-left-links;
     line-height: 1.4;
 }
 .contact__presentation_link__img{
-    width: 7.5vw;
+    width: calc(0.1875 * var(--base-logo-width));
     height: auto;
 }
 
 .contact__address_link__img{
-    width: 2.7vw;
+    width: calc(0.0675 * var(--base-logo-width));
     height: auto;
 }
 
@@ -188,13 +307,13 @@ p, h1{
 }
 
 .contact__address_link__text{
-    font-size: 1.6vw;
+    font-size: calc(0.04 * var(--base-logo-width)); //4%
     padding-left: $padding-left-links;
     line-height: 1.4;
 }
 
 .contact__email__img{
-    width: 5vw;
+    width: calc(0.125 * var(--base-logo-width));
     height: auto;
 }
 
@@ -208,16 +327,112 @@ p, h1{
 
 .contact__email__link_phone, .contact__email__link_email{
     display: block;
-    font-size: 1.6vw;
+    font-size: calc(0.04 * var(--base-logo-width));
     line-height: 1.4;
     color: $base-font-color;
 }
 
 .contact__email__link_email{
-    padding-top: 0.5vw;
+    padding-top: calc(0.0125 * var(--base-logo-width));
 }
 
 
-// transform: rotate(20deg);
-//@media (max-width: 1400px) {
-//}
+@media (max-width: 1800px) {
+    :root {
+        --base-logo-width: 27vw;
+        --base-logo-top-padding: 14vw;
+    }
+}
+@media (max-width: 1700px) {
+    :root {
+        --base-logo-width: 29vw;
+        --base-logo-top-padding: 15vw;
+    }
+}
+@media (max-width: 1600px) {
+    :root {
+        --base-logo-width: 32vw;
+        --base-logo-top-padding: 15vw;
+    }
+}
+@media (max-width: 1500px) {
+    :root {
+        --base-logo-width: 35vw;
+        --base-logo-top-padding: 15vw;
+    }
+}
+@media (max-width: 1400px) {
+    :root {
+        --base-logo-width: 37vw;
+        --base-logo-top-padding: 16vw;
+    }
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --base-logo-width: 40vw;
+        --base-logo-top-padding: 18vw;
+    }
+}
+
+
+@media (max-width: 576px) {
+    :root {
+        --base-logo-width: 90vw;
+        --base-logo-top-padding: 33vw;
+    }
+
+    .bubble3, .bubble7{
+        display: none;
+    }
+
+    .bubble4{
+        @include bubble(calc(50vw + (0.07 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.725 * var(--base-logo-width))), calc(0.07 * var(--base-logo-width)), #D0E18F);
+    }
+
+    .bubble5{
+        @include bubble(calc(50vw - (0.32 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (1.25 * var(--base-logo-width))), calc(0.14 * var(--base-logo-width)), #75167F);
+    }
+
+    .bubble6{
+        @include bubble(calc(50vw - (0.335 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.6 * var(--base-logo-width))), calc(0.0875 * var(--base-logo-width)), #9FCBF0);
+    }
+
+    .bubble8{
+        @include bubble(calc(50vw - (0.3 * var(--base-logo-width))), calc(var(--base-logo-top-padding) - (0.19 * var(--base-logo-width))), calc(0.1 * var(--base-logo-width)), #C22526);
+    }
+
+    .bubble9{
+        @include bubble(calc(50vw + (0.1 * var(--base-logo-width))), calc(var(--base-logo-top-padding) - (0.32 * var(--base-logo-width))), calc(0.1125 * var(--base-logo-width)), #9FCBF2);
+    }
+
+    .contact{
+        padding-top: calc(0.275 * var(--base-logo-width));
+        width: 100%;
+    }
+
+    .contact__wrapper{
+        flex-direction: column;
+        width: 100%;
+    }
+    .contact__item {
+        display: flex;
+        justify-content: center;
+        padding-bottom: calc(0.08 * var(--base-logo-width));
+        width: 100%;
+    }
+
+    .contact__presentation_link, .contact__address_link{
+        width: 100%;
+    }
+
+    .contact__img_wrapper{
+        width: 40%;
+        display: flex;
+        justify-content: end;
+    }
+
+    .contact__presentation_link__text, .contact__address_link__text, .contact__email__link{
+        width: 60%;
+    }
+}
