@@ -64,15 +64,6 @@ p, h1 {
   position: absolute;
 }
 
-@keyframes bubble1-rotate {
-  from {
-    transform: rotate(0deg);
-    transform-origin: 40% 62% 0;
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
 .bubble1 {
   left: calc(50vw - 0.21925 * var(--base-logo-width));
   top: calc(var(--base-logo-top-padding) - 0.0555 * var(--base-logo-width));
@@ -84,11 +75,17 @@ p, h1 {
   animation-delay: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
+  transform-origin: 40% 62% 0;
 }
 .bubble1 .circle {
   background-color: #A00885;
 }
 
+@keyframes bubble1-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .bubble2 {
   left: calc(50vw + 0.33 * var(--base-logo-width));
   top: calc(var(--base-logo-top-padding) + 0.0195 * var(--base-logo-width));
@@ -123,24 +120,18 @@ p, h1 {
   width: calc(0.25 * var(--base-logo-width));
   height: calc(0.25 * var(--base-logo-width));
   animation-name: bubble3-animation;
-  animation-duration: 1s;
-  animation-direction: alternate;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  transform-origin: calc(-0.7 * var(--base-logo-width)) calc(0.01 * var(--base-logo-width)) 0;
 }
 .bubble3 .circle {
   background-color: #A0CBF3;
 }
 
 @keyframes bubble3-animation {
-  25% {
-    transform: translate(1vw, -0.6vw);
-  }
-  50% {
-    transform: translate(-1vw, 0.6vw);
-  }
   to {
-    transform: translate(1vw, -1vw);
+    transform: rotate(360deg);
   }
 }
 .bubble4 {
@@ -149,21 +140,19 @@ p, h1 {
   width: calc(0.1 * var(--base-logo-width));
   height: calc(0.1 * var(--base-logo-width));
   animation-name: bubble4-animation;
-  animation-duration: 0.3s;
-  animation-direction: alternate;
+  animation-duration: 8s;
+  animation-delay: 8s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-out;
+  transform-origin: calc(-0.6 * var(--base-logo-width)) calc(-0.2 * var(--base-logo-width)) 0;
 }
 .bubble4 .circle {
   background-color: #D0E18F;
 }
 
 @keyframes bubble4-animation {
-  from {
-    transform-origin: 55% 60% 0;
-  }
   to {
-    transform: translateX(-0.1vw) rotate(120deg);
+    transform: rotate(360deg);
   }
 }
 .bubble5 {
@@ -171,32 +160,39 @@ p, h1 {
   top: calc(var(--base-logo-top-padding) + 0.84525 * var(--base-logo-width));
   width: calc(0.125 * var(--base-logo-width));
   height: calc(0.125 * var(--base-logo-width));
+  animation-name: bubble5-animation;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.1, 0.7, 1, 1);
+  transform-origin: calc(-0.4 * var(--base-logo-width)) calc(-0.4 * var(--base-logo-width)) 0;
 }
 .bubble5 .circle {
   background-color: #75167F;
 }
 
+@keyframes bubble5-animation {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .bubble6 {
   left: calc(50vw - 0.275 * var(--base-logo-width));
   top: calc(var(--base-logo-top-padding) + 0.63325 * var(--base-logo-width));
   width: calc(0.0875 * var(--base-logo-width));
   height: calc(0.0875 * var(--base-logo-width));
   animation-name: bubble6-animation;
-  animation-duration: 0.5s;
-  animation-direction: alternate;
+  animation-duration: 6s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease;
+  animation-timing-function: linear;
+  transform-origin: calc(0.4 * var(--base-logo-width)) calc(-0.5 * var(--base-logo-width)) 0;
 }
 .bubble6 .circle {
   background-color: #4F75C0;
 }
 
 @keyframes bubble6-animation {
-  from {
-    transform-origin: 40% 60% 0;
-  }
   to {
-    transform: translateX(0.1vw) rotate(-120deg);
+    transform: rotate(360deg);
   }
 }
 .bubble7 {
@@ -205,21 +201,18 @@ p, h1 {
   width: calc(0.1875 * var(--base-logo-width));
   height: calc(0.1875 * var(--base-logo-width));
   animation-name: bubble7-animation;
-  animation-duration: 1s;
-  animation-direction: alternate;
+  animation-duration: 13s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease;
+  animation-timing-function: linear;
+  transform-origin: calc(1 * var(--base-logo-width)) calc(-0.2 * var(--base-logo-width)) 0;
 }
 .bubble7 .circle {
   background-color: #669EE5;
 }
 
 @keyframes bubble7-animation {
-  from {
-    transform-origin: 10% 60% 0;
-  }
   to {
-    transform: translateY(1vw) rotate(120deg);
+    transform: rotate(360deg);
   }
 }
 .bubble8 {
@@ -232,7 +225,7 @@ p, h1 {
   animation-delay: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
-  transform-origin: 60% calc(0.8 * var(--base-logo-width)) 0;
+  transform-origin: calc(0.3 * var(--base-logo-width)) calc(0.8 * var(--base-logo-width)) 0;
 }
 .bubble8 .circle {
   background-color: #C12525;
@@ -387,6 +380,7 @@ p, h1 {
     top: calc(var(--base-logo-top-padding) + 0.725 * var(--base-logo-width));
     width: calc(0.07 * var(--base-logo-width));
     height: calc(0.07 * var(--base-logo-width));
+    transform-origin: calc(0 * var(--base-logo-width)) calc(-0.5 * var(--base-logo-width)) 0;
   }
   .bubble4 .circle {
     background-color: #D0E18F;
@@ -397,6 +391,7 @@ p, h1 {
     top: calc(var(--base-logo-top-padding) + 1.25 * var(--base-logo-width));
     width: calc(0.14 * var(--base-logo-width));
     height: calc(0.14 * var(--base-logo-width));
+    transform-origin: calc(0.3 * var(--base-logo-width)) calc(-0.22 * var(--base-logo-width)) 0;
   }
   .bubble5 .circle {
     background-color: #75167F;
@@ -407,6 +402,7 @@ p, h1 {
     top: calc(var(--base-logo-top-padding) + 0.6 * var(--base-logo-width));
     width: calc(0.0875 * var(--base-logo-width));
     height: calc(0.0875 * var(--base-logo-width));
+    transform-origin: calc(0.4 * var(--base-logo-width)) calc(-0.35 * var(--base-logo-width)) 0;
   }
   .bubble6 .circle {
     background-color: #9FCBF0;
@@ -417,6 +413,7 @@ p, h1 {
     top: calc(var(--base-logo-top-padding) - 0.19 * var(--base-logo-width));
     width: calc(0.1 * var(--base-logo-width));
     height: calc(0.1 * var(--base-logo-width));
+    transform-origin: calc(0.4 * var(--base-logo-width)) calc(0.4 * var(--base-logo-width)) 0;
   }
   .bubble8 .circle {
     background-color: #C22526;
@@ -427,6 +424,7 @@ p, h1 {
     top: calc(var(--base-logo-top-padding) - 0.32 * var(--base-logo-width));
     width: calc(0.1125 * var(--base-logo-width));
     height: calc(0.1125 * var(--base-logo-width));
+    transform-origin: calc(0 * var(--base-logo-width)) calc(0.6 * var(--base-logo-width)) 0;
   }
   .bubble9 .circle {
     background-color: #9FCBF2;

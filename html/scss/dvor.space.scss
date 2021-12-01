@@ -93,16 +93,6 @@ p, h1{
     position: absolute;
 }
 
-@keyframes bubble1-rotate {
-    from {
-        transform: rotate(0deg);
-        transform-origin: 40% 62% 0; // x y z
-    }
-    to {
-        transform: rotate(359deg);
-    }
-}
-
 .bubble1{
     @include bubble(calc(50vw - (0.21925 * var(--base-logo-width))), calc(var(--base-logo-top-padding) - (0.0555 * var(--base-logo-width))), calc(0.525 * var(--base-logo-width)), #A00885);
     //@include bubble(41.23vw, $base-logo-top-padding - 2.22vw, 21vw, #A00885);
@@ -115,9 +105,13 @@ p, h1{
     //animation-fill-mode: forwards;
     //animation-timing-function: linear;
     animation-timing-function: ease;
-
+    transform-origin: 40% 62% 0; // x y z
 }
-
+@keyframes bubble1-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 
 .bubble2{
@@ -145,83 +139,74 @@ p, h1{
 .bubble3{
     @include bubble(calc(50vw + (0.805 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.0945 * var(--base-logo-width))), calc(0.25 * var(--base-logo-width)), #A0CBF3);
     animation-name: bubble3-animation;
-    animation-duration: 1s;
-    animation-direction: alternate;
-    //animation-delay: 5s;
+    animation-duration: 12s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    transform-origin: calc(-0.7 * var(--base-logo-width)) calc(0.01 * var(--base-logo-width)) 0; // x y z
 }
 @keyframes bubble3-animation {
-    from {
-    }
-    25% {
-        transform: translate(1vw,-0.6vw);
-    }
-    50% {
-        transform: translate(-1vw,0.6vw);
-    }
-    to{
-        transform: translate(1vw,-1vw);
+    to {
+        transform: rotate(360deg);
     }
 }
 
 .bubble4{
     @include bubble(calc(50vw + (0.725 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.53325 * var(--base-logo-width))), calc(0.1 * var(--base-logo-width)), #D0E18F);
     animation-name: bubble4-animation;
-    animation-duration: 0.3s;
-    animation-direction: alternate;
-    //animation-delay: 5s;
+    animation-duration: 8s;
+    animation-delay: 8s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-timing-function: ease-out;
+    transform-origin: calc(-0.6 * var(--base-logo-width)) calc(-0.2 * var(--base-logo-width)) 0; // x y z
 }
 @keyframes bubble4-animation {
-    from {
-        transform-origin: 55% 60% 0; // x y z
-    }
     to {
-        //transform: rotate(359deg);
-        transform: translateX(-0.1vw) rotate(120deg);
+        transform: rotate(360deg);
     }
 }
 
 .bubble5{
     @include bubble(calc(50vw + (0.505 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.84525 * var(--base-logo-width))), calc(0.125 * var(--base-logo-width)), #75167F);
-    // @include bubble(70.2vw, $base-logo-top-padding + 34.33vw, 5vw, #75167F);
+    animation-name: bubble5-animation;
+    animation-duration: 15s;
+    //animation-delay: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.1, .7, 1, 1);
+    transform-origin: calc(-0.4 * var(--base-logo-width)) calc(-0.4 * var(--base-logo-width)) 0; // x y z
 }
-
+@keyframes bubble5-animation {
+    to {
+        transform: rotate(360deg);
+    }
+}
 .bubble6{
     @include bubble(calc(50vw - (0.275 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.63325 * var(--base-logo-width))), calc(0.0875 * var(--base-logo-width)), #4F75C0);
     animation-name: bubble6-animation;
-    animation-duration: 0.5s;
-    animation-direction: alternate;
+    animation-duration: 6s;
     //animation-delay: 5s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease;
+    animation-timing-function: linear;
+    transform-origin: calc(0.4 * var(--base-logo-width)) calc(-0.5 * var(--base-logo-width)) 0; // x y z
 }
 @keyframes bubble6-animation {
-    from {
-        transform-origin: 40% 60% 0; // x y z
-    }
     to {
-        transform: translateX(0.1vw) rotate(-120deg);
+        transform:  rotate(360deg);
     }
 }
 
 .bubble7{
     @include bubble(calc(50vw - (1.08 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.42075 * var(--base-logo-width))), calc(0.1875 *  var(--base-logo-width)), #669EE5);
     animation-name: bubble7-animation;
-    animation-duration: 1s;
-    animation-direction: alternate;
+    animation-duration: 13s;
+    //animation-direction: alternate;
     //animation-delay: 5s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease;
+    animation-timing-function: linear;
+    transform-origin: calc(1 * var(--base-logo-width)) calc(-0.2 * var(--base-logo-width)) 0; // x y z
 }
 @keyframes bubble7-animation {
-    from {
-        transform-origin: 10% 60% 0; // x y z
-    }
     to {
-        transform: translateY(1vw) rotate(120deg);
+        transform:  rotate(360deg); //translate(40vw, 300px)
     }
 }
 
@@ -233,7 +218,7 @@ p, h1{
     animation-delay: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: ease;
-    transform-origin: 60% calc(0.8 * var(--base-logo-width)) 0; // x y z
+    transform-origin: calc(0.3 * var(--base-logo-width)) calc(0.8 * var(--base-logo-width)) 0; // x y z
 }
 @keyframes bubble8-animation {
     to {
@@ -388,22 +373,27 @@ p, h1{
 
     .bubble4{
         @include bubble(calc(50vw + (0.07 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.725 * var(--base-logo-width))), calc(0.07 * var(--base-logo-width)), #D0E18F);
+        transform-origin: calc(0 * var(--base-logo-width)) calc(-0.5 * var(--base-logo-width)) 0; // x y z
     }
 
     .bubble5{
         @include bubble(calc(50vw - (0.32 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (1.25 * var(--base-logo-width))), calc(0.14 * var(--base-logo-width)), #75167F);
+        transform-origin: calc(0.3 * var(--base-logo-width)) calc(-0.22 * var(--base-logo-width)) 0; // x y z
     }
 
     .bubble6{
         @include bubble(calc(50vw - (0.335 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.6 * var(--base-logo-width))), calc(0.0875 * var(--base-logo-width)), #9FCBF0);
+        transform-origin: calc(0.4 * var(--base-logo-width)) calc(-0.35 * var(--base-logo-width)) 0; // x y z
     }
 
     .bubble8{
         @include bubble(calc(50vw - (0.3 * var(--base-logo-width))), calc(var(--base-logo-top-padding) - (0.19 * var(--base-logo-width))), calc(0.1 * var(--base-logo-width)), #C22526);
+        transform-origin: calc(0.4 * var(--base-logo-width)) calc(0.4 * var(--base-logo-width)) 0; // x y z
     }
 
     .bubble9{
         @include bubble(calc(50vw + (0.1 * var(--base-logo-width))), calc(var(--base-logo-top-padding) - (0.32 * var(--base-logo-width))), calc(0.1125 * var(--base-logo-width)), #9FCBF2);
+        transform-origin: calc(0 * var(--base-logo-width)) calc(0.6 * var(--base-logo-width)) 0; // x y z
     }
 
     .contact{
