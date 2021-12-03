@@ -140,6 +140,7 @@ p, h1{
     @include bubble(calc(50vw + (0.805 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.0945 * var(--base-logo-width))), calc(0.25 * var(--base-logo-width)), #A0CBF3);
     animation-name: bubble3-animation;
     animation-duration: 12s;
+    animation-delay: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     transform-origin: calc(-0.7 * var(--base-logo-width)) calc(0.01 * var(--base-logo-width)) 0; // x y z
@@ -154,7 +155,7 @@ p, h1{
     @include bubble(calc(50vw + (0.725 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.53325 * var(--base-logo-width))), calc(0.1 * var(--base-logo-width)), #D0E18F);
     animation-name: bubble4-animation;
     animation-duration: 8s;
-    animation-delay: 8s;
+    animation-delay: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
     transform-origin: calc(-0.6 * var(--base-logo-width)) calc(-0.2 * var(--base-logo-width)) 0; // x y z
@@ -169,7 +170,7 @@ p, h1{
     @include bubble(calc(50vw + (0.505 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.84525 * var(--base-logo-width))), calc(0.125 * var(--base-logo-width)), #75167F);
     animation-name: bubble5-animation;
     animation-duration: 15s;
-    //animation-delay: 5s;
+    animation-delay: 4s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(.1, .7, 1, 1);
     transform-origin: calc(-0.4 * var(--base-logo-width)) calc(-0.4 * var(--base-logo-width)) 0; // x y z
@@ -183,7 +184,7 @@ p, h1{
     @include bubble(calc(50vw - (0.275 * var(--base-logo-width))), calc(var(--base-logo-top-padding) + (0.63325 * var(--base-logo-width))), calc(0.0875 * var(--base-logo-width)), #4F75C0);
     animation-name: bubble6-animation;
     animation-duration: 6s;
-    //animation-delay: 5s;
+    animation-delay: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     transform-origin: calc(0.4 * var(--base-logo-width)) calc(-0.5 * var(--base-logo-width)) 0; // x y z
@@ -199,15 +200,20 @@ p, h1{
     animation-name: bubble7-animation;
     animation-duration: 13s;
     //animation-direction: alternate;
-    //animation-delay: 5s;
+    animation-delay: 6s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     transform-origin: calc(1 * var(--base-logo-width)) calc(-0.2 * var(--base-logo-width)) 0; // x y z
 }
 @keyframes bubble7-animation {
+    50%{
+        transform-origin: calc(0.8 * var(--base-logo-width)) calc(-0.5 * var(--base-logo-width)) 0; // x y z
+    }
     to {
         transform:  rotate(360deg); //translate(40vw, 300px)
+        transform-origin: calc(1 * var(--base-logo-width)) calc(-0.2 * var(--base-logo-width)) 0; // x y z
     }
+
 }
 
 .bubble8{
@@ -215,14 +221,19 @@ p, h1{
     animation-name: bubble8-animation;
     animation-duration: 7s;
     //animation-direction: alternate;
-    animation-delay: 5s;
+    animation-delay: 7s;
     animation-iteration-count: infinite;
     animation-timing-function: ease;
     transform-origin: calc(0.3 * var(--base-logo-width)) calc(0.8 * var(--base-logo-width)) 0; // x y z
 }
 @keyframes bubble8-animation {
+    50%{
+        transform-origin: calc(0.1 * var(--base-logo-width)) calc(0.5 * var(--base-logo-width)) 0; // x y z
+    }
+
     to {
         transform:  rotate(360deg); //translate(40vw, 300px)
+        transform-origin: calc(0.3 * var(--base-logo-width)) calc(0.8 * var(--base-logo-width)) 0; // x y z
     }
 }
 
@@ -231,14 +242,18 @@ p, h1{
     animation-name: bubble9-animation;
     animation-duration: 10s;
     //animation-direction: alternate;
-    animation-delay: 15s;
+    animation-delay: 8s;
     animation-iteration-count: infinite;
     animation-timing-function: ease;
     transform-origin: 60% calc(0.8 * var(--base-logo-width)) 0; // x y z
 }
 @keyframes bubble9-animation {
+    90%{
+        transform-origin: calc(-0.2 * var(--base-logo-width)) calc(0.4 * var(--base-logo-width)) 0; // x y z
+    }
     to {
         transform:  rotate(360deg); //translate(40vw, 300px)
+        transform-origin: 60% calc(0.8 * var(--base-logo-width)) 0; // x y z
     }
 }
 

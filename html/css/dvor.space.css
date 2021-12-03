@@ -121,6 +121,7 @@ p, h1 {
   height: calc(0.25 * var(--base-logo-width));
   animation-name: bubble3-animation;
   animation-duration: 12s;
+  animation-delay: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   transform-origin: calc(-0.7 * var(--base-logo-width)) calc(0.01 * var(--base-logo-width)) 0;
@@ -141,7 +142,7 @@ p, h1 {
   height: calc(0.1 * var(--base-logo-width));
   animation-name: bubble4-animation;
   animation-duration: 8s;
-  animation-delay: 8s;
+  animation-delay: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
   transform-origin: calc(-0.6 * var(--base-logo-width)) calc(-0.2 * var(--base-logo-width)) 0;
@@ -162,6 +163,7 @@ p, h1 {
   height: calc(0.125 * var(--base-logo-width));
   animation-name: bubble5-animation;
   animation-duration: 15s;
+  animation-delay: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.1, 0.7, 1, 1);
   transform-origin: calc(-0.4 * var(--base-logo-width)) calc(-0.4 * var(--base-logo-width)) 0;
@@ -182,6 +184,7 @@ p, h1 {
   height: calc(0.0875 * var(--base-logo-width));
   animation-name: bubble6-animation;
   animation-duration: 6s;
+  animation-delay: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   transform-origin: calc(0.4 * var(--base-logo-width)) calc(-0.5 * var(--base-logo-width)) 0;
@@ -202,6 +205,7 @@ p, h1 {
   height: calc(0.1875 * var(--base-logo-width));
   animation-name: bubble7-animation;
   animation-duration: 13s;
+  animation-delay: 6s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   transform-origin: calc(1 * var(--base-logo-width)) calc(-0.2 * var(--base-logo-width)) 0;
@@ -211,8 +215,12 @@ p, h1 {
 }
 
 @keyframes bubble7-animation {
+  50% {
+    transform-origin: calc(0.8 * var(--base-logo-width)) calc(-0.5 * var(--base-logo-width)) 0;
+  }
   to {
     transform: rotate(360deg);
+    transform-origin: calc(1 * var(--base-logo-width)) calc(-0.2 * var(--base-logo-width)) 0;
   }
 }
 .bubble8 {
@@ -222,7 +230,7 @@ p, h1 {
   height: calc(0.0875 * var(--base-logo-width));
   animation-name: bubble8-animation;
   animation-duration: 7s;
-  animation-delay: 5s;
+  animation-delay: 7s;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
   transform-origin: calc(0.3 * var(--base-logo-width)) calc(0.8 * var(--base-logo-width)) 0;
@@ -232,8 +240,12 @@ p, h1 {
 }
 
 @keyframes bubble8-animation {
+  50% {
+    transform-origin: calc(0.1 * var(--base-logo-width)) calc(0.5 * var(--base-logo-width)) 0;
+  }
   to {
     transform: rotate(360deg);
+    transform-origin: calc(0.3 * var(--base-logo-width)) calc(0.8 * var(--base-logo-width)) 0;
   }
 }
 .bubble9 {
@@ -243,7 +255,7 @@ p, h1 {
   height: calc(0.1125 * var(--base-logo-width));
   animation-name: bubble9-animation;
   animation-duration: 10s;
-  animation-delay: 15s;
+  animation-delay: 8s;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
   transform-origin: 60% calc(0.8 * var(--base-logo-width)) 0;
@@ -253,8 +265,12 @@ p, h1 {
 }
 
 @keyframes bubble9-animation {
+  90% {
+    transform-origin: calc(-0.2 * var(--base-logo-width)) calc(0.4 * var(--base-logo-width)) 0;
+  }
   to {
     transform: rotate(360deg);
+    transform-origin: 60% calc(0.8 * var(--base-logo-width)) 0;
   }
 }
 .contact {
